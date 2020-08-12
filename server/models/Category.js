@@ -6,8 +6,7 @@ const categorySchema = new Schema({
   name: {
     type: String,
     required: true,
-    trim: true,
-    subCategories: [Category.Schema]
+    trim: true
   }
 });
 
