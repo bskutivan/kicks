@@ -1,17 +1,17 @@
 import React from 'react';
-import './default.css';
-import Logo from './images/templogo.jpg';
+import ReactDOM from 'react-dom';
+import { BrowserRouter } from 'react-router-dom';
+import { Provider } from 'react-redux';
+// import store from './redux/createStore';
+import App from './App';
 
-const Header = props => {
-    return (
-        <header className="header">
-            <div className="wrap">
-                <div className="logo">
-                    <img src={Logo} alt="templogo"/>
-                </div>
-            </div>
-        </header>
-    );
-};
-
-export default Header;
+ReactDOM.render(
+  <React.StrictMode>
+    {/* <Provider store={store}> */}
+      <BrowserRouter>
+        <App />
+      </BrowserRouter>
+    {/* </Provider> */}
+  </React.StrictMode>,
+  document.getElementById('root')
+);
