@@ -1,7 +1,7 @@
 import React from 'react';
-import Casual from './../../images/Casual.jpg';
-import Dress from './../../images/dress.jpg';
-import Performance from './../../images/Performance.jpg';
+import Casual from '../../assets/images/casual.jpg';
+import Dress from './../../assets/images/dress.jpg';
+import Performance from './../../assets/images/performance.jpg';
 import './styles.scss';
 
 const Directory = props => {

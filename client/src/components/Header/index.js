@@ -1,6 +1,6 @@
 import React from 'react';
 import './styles.css';
-import Logo from './assets/images/templogo.jpg';
+import Logo from '../../assets/images/templogo.jpg';
 
 const Header = props => {
     return (

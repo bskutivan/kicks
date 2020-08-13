@@ -6,7 +6,7 @@ import { Provider } from 'react-redux';
 import store from './redux/store';
   
 import Header from './components/Header';
-import Homepage from './pages/Homepage';
+import Home from './pages/Homepage';
 
 const client = new ApolloClient({
     request: (operation) => {
@@ -28,7 +28,7 @@ function App() {
                     <Provider store={store}>
                       <Header />
                       <Switch>
-                        <Route exact path="/" component={HomePage} />
+                        <Route exact path="/" component={Home} />
                       </Switch>                         
                     </Provider>
                 </div>
