@@ -1,8 +1,8 @@
 import React from 'react';
 import Directory from './../../components/Directory';
-import './style.scss';
+import './styles.scss';
 
-const Homepage = props => {
+const Home = () => {
     return (
         <section className="homepage">
             <Directory />
@@ -10,4 +10,4 @@ const Homepage = props => {
     );
 };
 
-export default Homepage;
+export default Home;

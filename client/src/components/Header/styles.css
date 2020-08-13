@@ -1,0 +1,29 @@
+.header {
+  height: 6.5rem;
+  -webkit-box-shadow: 0 2px 4px 0 rgab(0, 0, 0, 0.1);
+          box-shadow: 0 2px 4px 0 rgab(0, 0, 0, 0.1);
+}
+
+.wrap {
+  max-width: 1450px;
+  position: relative;
+  height: 100%;
+  margin: 0 auto;
+}
+
+.wrap .logo {
+  position: absolute;
+  top: 50%;
+  left: 10px;
+  -webkit-transfom: translateY(-50%);
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  width: 13.0rem;
+}
+
+.wrap .logo img {
+  display: block;
+  width: 100%;
+  margin: 0em;
+}
+/*# sourceMappingURL=styles.css.map */
