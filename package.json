@@ -28,7 +28,11 @@
     "if-env": "^1.0.4",
     "jsonwebtoken": "^8.5.1",
     "mongoose": "^5.9.28",
+<<<<<<< HEAD
     "node-sass": "^4.14.1"
+=======
+    "sass": "^1.26.10"
+>>>>>>> d1656b9f1aa1fcd3065096af174e5318f01dc641
   },
   "devDependencies": {
     "concurrently": "^5.3.0"
