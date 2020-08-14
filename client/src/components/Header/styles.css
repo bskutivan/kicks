@@ -26,4 +26,30 @@
   width: 100%;
   margin: 0em;
 }
+
+.wrap .callToAction {
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  -webkit-transfom: translateY(-50%);
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+}
+
+.wrap .callToAction ul, .wrap .callToAction li {
+  margin: 0;
+  padding: 0;
+}
+
+.wrap .callToAction li {
+  list-style-type: none;
+}
+
+.wrap .callToAction a {
+  font-size: 1.8rem;
+  line-height: 1;
+  color: black;
+  text-decoration: none;
+  text-transform: uppercase;
+}
 /*# sourceMappingURL=styles.css.map */

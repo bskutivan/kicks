@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-import './styles.scss';
+import '../../styles/styles.css';
 
 class Registration extends Component {
 
