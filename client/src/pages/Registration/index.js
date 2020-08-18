@@ -1,17 +1,12 @@
 import React, { Component } from 'react';
+import Signup from "./../../components/Signup";
 
 import '../../styles/styles.css';
 
 class Registration extends Component {
 
     render () {
-        return (
-            <div>
-                <h1>
-                    Registration
-                </h1>
-            </div>
-        );
+        return <Signup />;
     }
 }
 
