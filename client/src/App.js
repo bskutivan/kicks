@@ -30,6 +30,7 @@ function App() {
     return (
         <ApolloProvider client={client}>
             <Router>
+                <div>
                 <Provider store={store}>
                     <Header />
                     <Switch>
@@ -40,6 +41,7 @@ function App() {
                     </Switch>
                     <Footer />
                 </Provider>
+                </div>
             </Router>
         </ApolloProvider>
     )
