@@ -59,11 +59,6 @@ function App() {
         </ApolloProvider>
     )
 }
-function App() {
-    return (
-        
-    );
-}
 
 export default App;
 
