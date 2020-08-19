@@ -1,10 +1,11 @@
 import React from 'react';
 import Header from './components/Header';
 import Homepage from './pages/Homepage';
-import HomepageLayout from './layouts/HomepageLayout';
+// import HomepageLayout from './layouts/HomepageLayout';
 import Registration from './pages/Registration';
 import Login from './pages/Login';
-import MainLayout from './layouts/MainLayout';
+// import MainLayout from './layouts/MainLayout';
+import Footer from './components/Footer';
 
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import { ApolloProvider } from '@apollo/react-hooks';
@@ -28,32 +29,15 @@ function App() {
     return (
         <ApolloProvider client={client}>
             <Router>
-                <div>
                     <Provider store={store}>
-                    <div className="App">
                         <Header />
-                        <div className="main">
                         <Switch>
-                            <Route exact path="/" render={() => (
-                                <HomepageLayout>
-                                    <Homepage />
-                                </HomepageLayout>
-                            )} />
-                            <Route path="/registration" render={() => 
-                                <MainLayout>
-                                    <Registration />
-                                </MainLayout>
-                            } />
-                            <Route path="/login" render={() => 
-                                <MainLayout>
-                                    <Login />
-                                </MainLayout>
-                            } />
+                            <Route exact path="/" component={Homepage} />                                   
+                            <Route path="/registration" component={Registration} />
+                            <Route path="/login" component={Login}/>
                         </Switch>
-                        </div>
-                    </div>
+                        <Footer />
                     </Provider>
-                </div>
             </Router>
         </ApolloProvider>
     )

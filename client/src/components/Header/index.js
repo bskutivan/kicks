@@ -2,25 +2,58 @@ import React from 'react';
 import './styles.css';
 import { Link } from 'react-router-dom';
 import Logo from "../../assets/images/templogo.jpg"
+import Auth from "../../utils/auth";
 
 const Header = props => {
+
+    function showNavigation() {
+        if (Auth.loggedIn()) {
+          return (
+            <ul className="flex-row">
+              <li className="mx-1">
+                <Link to="/orderHistory">
+                  Order History
+                </Link>
+              </li>
+              <li className="mx-1">
+                {/* this is not using the Link component to logout or user and then refresh the application to the start */}
+                <a href="/" onClick={() => Auth.logout()}>
+                  Logout
+                </a>
+              </li>
+            </ul>
+          );
+        } else {
+          return (
+            <ul className="flex-row">
+              <li className="mx-1">
+                <Link to="/signup">
+                  Signup
+                </Link>
+              </li>
+              <li className="mx-1">
+                <Link to="/login">
+                  Login
+                </Link>
+              </li>
+            </ul>
+          );
+        }
+    }
+    
     return (
         <header className="header">
             <div className="wrap">
                 <div className="logo">
                     <Link>
-                    <img src={Logo} alt="templogo"/>
+                        <img src={Logo} alt="templogo"/>
                     </Link>
                 </div>
 
                 <div className="callToActions">
-                    <ul>
-                        <li>
-                            <Link to="/registration">
-                            Register
-                            </Link>
-                        </li>
-                    </ul>
+                    <nav>
+                        {showNavigation()}
+                    </nav>
                 </div>
             </div>
         </header>
