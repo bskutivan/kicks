@@ -9,8 +9,8 @@ const Header = props => {
     function showNavigation() {
         if (Auth.loggedIn()) {
           return (
-            <ul className="flex-row">
-              <li className="mx-1 nav-item">
+            <ul>
+              <li className="nav-item">
                 <Link to="/orderHistory">
                   Order History
                 </Link>
@@ -25,8 +25,8 @@ const Header = props => {
           );
         } else {
           return (
-            <ul className="flex-row">
-              <li className="mx-1 nav-item">
+            <ul>
+              <li className="nav-item">
                 <Link to="/signup">
                   Signup
                 </Link>
