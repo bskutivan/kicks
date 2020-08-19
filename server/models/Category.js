@@ -1,4 +1,5 @@
 const mongoose = require('mongoose');
+// const Product = require('Product');
 
 const { Schema } = mongoose;
 
@@ -8,6 +9,7 @@ const categorySchema = new Schema({
     required: true,
     trim: true
   }
+  // products: [Product.schema]
 });
 
 const Category = mongoose.model('Category', categorySchema);
