@@ -1,0 +1,25 @@
+.flex-row {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.card {
+    height: 35rem;
+    width: 25rem;
+    text-align: center;
+    background-color: rgba(14, 13, 13, 0.555);
+    margin: 3rem;
+    border-radius: 1rem;
+}
+
+.card img {
+    width: 80%;
+    height: 55%;
+    margin-top: 1rem;
+    border-radius: 1rem;
+}
+
+h2 {
+    color: rgb(240, 68, 68);
+    margin: 2rem 0 0 3rem;
+}

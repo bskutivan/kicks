@@ -27,6 +27,9 @@
   display: block;
   width: 100%;
   margin: 0em;
+  border-radius: 50%;
+  -webkit-box-shadow: 2px 2px 4px #910a0a;
+          box-shadow: 2px 2px 4px #910a0a;
 }
 
 .wrap nav {

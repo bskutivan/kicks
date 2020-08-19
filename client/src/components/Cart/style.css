@@ -5,11 +5,19 @@
     min-width: 20%;
     max-width: 30%;
     max-height: 60%;
-    background-color: var(--light);
+    background-color: rgb(73, 72, 72);
     overflow: auto;
     padding: .5rem;
-    box-shadow: 0 0 1rem rgba(0, 0, 0, .5);
+    box-shadow: 0 0 1rem rgba(41, 40, 40, 0.5);
     border-bottom-left-radius: .5rem;
+}
+
+.cart h2 {
+    font-size: 1.5rem;
+    border-bottom: 1px solid rgb(100, 99, 99);
+    color: rgb(129, 125, 125);
+    padding-bottom: .5rem;
+    margin: 1rem 0;
 }
 
 .cart .close {
