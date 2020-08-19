@@ -1,9 +1,17 @@
 .directory {
   height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
 }
 
 .directory .wrap {
-  display: inline-block;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   width: 100%;
   height: 100%;
 }
@@ -31,7 +39,8 @@
 
 .directory .wrap .item a {
   position: absolute;
-  background: white;
+  background: none;
+  color: #eb4a4a;
   top: 50%;
   left: 50%;
   z-index: 2;

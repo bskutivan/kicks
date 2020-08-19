@@ -1,24 +1,26 @@
 .header {
-  height: 6.5rem;
+  height: 15.5rem;
   -webkit-box-shadow: 0 2px 4px 0 rgab(0, 0, 0, 0.1);
           box-shadow: 0 2px 4px 0 rgab(0, 0, 0, 0.1);
+  background-color: #070707;
 }
 
 .wrap {
-  max-width: 1450px;
-  position: relative;
-  height: 100%;
-  margin: 0 auto;
+  padding: 3rem 0rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .wrap .logo {
-  position: absolute;
-  top: 50%;
-  left: 10px;
-  -webkit-transfom: translateY(-50%);
-  -webkit-transform: translateY(-50%);
-          transform: translateY(-50%);
   width: 13.0rem;
+  padding: 1.3rem;
 }
 
 .wrap .logo img {
@@ -27,28 +29,32 @@
   margin: 0em;
 }
 
-.wrap .callToAction {
-  position: absolute;
-  top: 50%;
-  right: 10px;
-  -webkit-transfom: translateY(-50%);
-  -webkit-transform: translateY(-50%);
-          transform: translateY(-50%);
+.wrap ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
-.wrap .callToAction ul, .wrap .callToAction li {
-  margin: 0;
-  padding: 0;
-}
-
-.wrap .callToAction li {
+.wrap li {
   list-style-type: none;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
 }
 
-.wrap .callToAction a {
+.wrap li a {
+  color: #d34141;
+}
+
+.wrap a {
   font-size: 1.8rem;
   line-height: 1;
-  color: black;
   text-decoration: none;
   text-transform: uppercase;
 }

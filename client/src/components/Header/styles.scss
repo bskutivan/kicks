@@ -1,21 +1,19 @@
 .header {
-    height: 6.5rem;
+    height: 15.5rem;
     box-shadow: 0 2px 4px 0 rgab(0,0,0,.1);
+    background-color: rgb(7,7,7);
 }
 
 .wrap {
-    max-width: 1450px;
-    position: relative;
-    height: 100%;
-    margin: 0 auto;
+   padding: 3rem 0rem;
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   
 
     .logo {
-        position: absolute;
-        top: 50%; left: 10px;
-        -webkit-transfom: translateY(-50%);
-        -moz-transform: translateY(-50%);
-        transform: translateY(-50%);
         width: 13.0rem;
+        padding: 1.3rem;
 
         img {
             display: block;
@@ -24,28 +22,29 @@
         }
     }
 
-    .callToAction {
-        position: absolute;
-        top: 50%; right: 10px;
-        -webkit-transfom: translateY(-50%);
-        -moz-transform: translateY(-50%);
-        transform: translateY(-50%);
 
-        ul, li {
-            margin: 0;
-            padding: 0;
-        }
 
-        li {
-            list-style-type: none;
-        }
+    ul {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
 
+    li {
+        list-style-type: none;
+        flex: 1;
+        
         a {
-            font-size: 1.8rem;
-            line-height: 1;
-            color: black;
-            text-decoration: none;
-            text-transform: uppercase;
+            color: rgb(211, 65, 65);
         }
     }
+
+    a {
+        font-size: 1.8rem;
+        line-height: 1;
+        text-decoration: none;
+        text-transform: uppercase;
+    }
+
+    
 }

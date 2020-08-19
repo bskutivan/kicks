@@ -10,12 +10,12 @@ const Header = props => {
         if (Auth.loggedIn()) {
           return (
             <ul className="flex-row">
-              <li className="mx-1">
+              <li className="mx-1 nav-item">
                 <Link to="/orderHistory">
                   Order History
                 </Link>
               </li>
-              <li className="mx-1">
+              <li className="mx-1 nav-item">
                 {/* this is not using the Link component to logout or user and then refresh the application to the start */}
                 <a href="/" onClick={() => Auth.logout()}>
                   Logout
@@ -26,12 +26,12 @@ const Header = props => {
         } else {
           return (
             <ul className="flex-row">
-              <li className="mx-1">
+              <li className="mx-1 nav-item">
                 <Link to="/signup">
                   Signup
                 </Link>
               </li>
-              <li className="mx-1">
+              <li className="mx-1 nav-item">
                 <Link to="/login">
                   Login
                 </Link>
@@ -45,7 +45,7 @@ const Header = props => {
         <header className="header">
             <div className="wrap">
                 <div className="logo">
-                    <Link>
+                    <Link to="/">
                         <img src={Logo} alt="templogo"/>
                     </Link>
                 </div>
