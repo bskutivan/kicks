@@ -4,7 +4,8 @@ import Dress from './../../assets/images/dress.jpg';
 import Performance from './../../assets/images/performance.jpg';
 import './styles.css';
 
-const Directory = props => {
+
+function Directory() {
     return (
         <div className="directory">
             <div className="wrap">

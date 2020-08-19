@@ -1,82 +1,75 @@
-import React, { Component } from 'react';
-import '.styles.css';
-import FormInput from './../forms/FormInput';
-import { render } from 'node-sass';
+import "./style.css"
+// import FormInput from './../forms/FormInput';
+import React, { useState } from "react";
+import { useMutation } from '@apollo/react-hooks';
+import { Link } from "react-router-dom";
+import { LOGIN } from "../../utils/mutations"
+import Auth from "../../utils/auth";
 
+function SignIn(props) {
+  const [formState, setFormState] = useState({ email: '', password: '' })
+  const [login, { error }] = useMutation(LOGIN);
 
-const initialState = {
-    email: '',
-    password: ''
-};
-
-class SignIn extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            ...initialState
-        };
-
-        this.handleChange = this.handleChange.bind(this);
+  const handleFormSubmit = async event => {
+    event.preventDefault();
+    try {
+      const mutationResponse = await login({ variables: { email: formState.email, password: formState.password } })
+      const token = mutationResponse.data.login.token;
+      Auth.login(token);
+    } catch (e) {
+      console.log(e)
     }
-   
-    handleChange(e) {
-        const { name, value,} = e.target;
-        this.setState({
-            [name]: value
-        });
-    }
+  };
 
-    handleSubmit = async e => {
-        e.preventDefault();
-        const { email, password } = this.state;
+  const handleChange = event => {
+    const { name, value } = event.target;
+    setFormState({
+      ...formState,
+      [name]: value
+    });
+  };
 
-        try{
+  return (
+    <div className="signin">
+        <div className="wrap">
+            <Link to="/signup">
+                ← Go to Signup
+            </Link>
 
-            await auth.SignInWithEmailAndPassword(email, password);
-            this.setState({
-                ...initialState
-            });
-
-        } catch(err) {
-            // console.log(err);
-        }
-    }
-   
-    render() {
-        const { email, password } = this.state;
-        return (
-            <div className="signin">
-                <div className="wrap">
-                    <h2>
-                        Login
-                    </h2>
-
-                    <div className="formWrap">
-                        <form onSubmit={this.handleSubmit}>
-                            <FormInput 
-                            type="email"
-                            name="email"
-                            value={email}
-                            placeholder="Email"
-                            handleChange={this.handleChange}
-                            />
-                            <FormInput 
-                            type="password"
-                            name="password"
-                            value={password}
-                            placeholder="Password"
-                            handleChange={this.handleChange}
-                            />
-                            <Button type="submit">
-                                Login
-                            </Button>
-                        </form>
-                    </div>
-                </div>
+            <h2>Login</h2>
+            <div className="formWrap">
+                <form onSubmit={handleFormSubmit}>
+                    <label htmlFor="email">Email address:</label>
+                    <input
+                        placeholder="youremail@test.com"
+                        name="email"
+                        type="email"
+                        id="email"
+                        onChange={handleChange}
+                    />
+                    <label htmlFor="pwd">Password:</label>
+                    <input
+                        placeholder="******"
+                        name="password"
+                        type="password"
+                        id="pwd"
+                        onChange={handleChange}
+                    />
+                    {
+                    error ? <div>
+                        <p className="error-text" >The provided credentials are incorrect</p>
+                    </div> : null
+                    }
+                    <button type="submit">
+                        Submit
+                    </button>
+                </form>
             </div>
-        );
-    }
+        </div>
+    </div>
+);
 }
+
 
 
 

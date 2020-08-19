@@ -1,5 +1,4 @@
 import React from 'react';
-import './default.css';
 import Header from './components/Header';
 import Homepage from './pages/Homepage';
 import HomepageLayout from './layouts/HomepageLayout';
@@ -40,16 +39,16 @@ function App() {
                                     <Homepage />
                                 </HomepageLayout>
                             )} />
-                            <Route path="/registration" render={() => currentUser ? <Redirect to="/" /> : (
-                                <MainLayout currentUser={currentUser}>
+                            <Route path="/registration" render={() => 
+                                <MainLayout>
                                     <Registration />
                                 </MainLayout>
-                            )} />
-                            <Route path="/login" render={() => (
+                            } />
+                            <Route path="/login" render={() => 
                                 <MainLayout>
                                     <Login />
                                 </MainLayout>
-                            )} />
+                            } />
                         </Switch>
                         </div>
                     </div>

@@ -1,112 +1,94 @@
-import React, { Component } from 'react';
 import './styles.css';
+// import FormInput from './../forms/FormInput';
 
-import FormInput from './../forms/FormInput';
+import React, { useState } from "react";
+import { Link } from "react-router-dom";
+import { useMutation } from '@apollo/react-hooks';
+import Auth from "../../utils/auth";
+import { ADD_USER } from "../../utils/mutations";
 
+function Signup(props) {
+  const [formState, setFormState] = useState({ email: '', password: '' });
+  const [addUser] = useMutation(ADD_USER);
 
-const intialState = {
-    displayName:'',
-    email: '',
-    passwords: '',
-    confirmPasswords: '',
-    errors: []
-};
+  const handleFormSubmit = async event => {
+    event.preventDefault();
+    const mutationResponse = await addUser({
+      variables: {
+        email: formState.email, password: formState.password,
+        firstName: formState.firstName, lastName: formState.lastName
+      }
+    });
+    const token = mutationResponse.data.addUser.token;
+    Auth.login(token);
+  };
 
-class Signup extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            ...intialState
-        };
+  const handleChange = event => {
+    const { name, value } = event.target;
+    setFormState({
+      ...formState,
+      [name]: value
+    });
+  };
 
-        this.handleChange = this.handleChange.bind(this);
-    }
+  return (
+    <div className="signup">
+        <div className="wrap">
+            <Link to="/login">
+                ← Go to Login
+            </Link>
 
-    handleChange() {
-        const { name, value } = e.target;
-
-        this.setState({
-            [name]: value
-        });
-
-    }
-
-    handleFormSubmit = async event => {
-        event.preventDefault();
-        const { displayName, email, password, confirmPassword, errors } = this.state
-
-        if (password !== confirmPassword) {
-            const err = ['Passwords do not match'];
-            this.setState({
-                errors: err
-            });
-            return;
-        }
-    }
-
-
-    render () {
-        const { displayName, email, password, confirmPassword, errors } = this.state;
-        return (
-            <div className="signup">
-                <div className="wrap">
-                <h2>
-                    Signup
-                </h2>
-
-                {errors.length > 0 && (
-                    <ul>
-                        {errors.map((err, index) => {
-                            return (
-                                <li key={index}>
-                                    {err}
-                                </li>
-                            );
-                        })}
-                    </ul>
-                )}
-
-                <div className="formWrap">
-                <form onSubmit={this.handleFormSubmit}>
-                <FormInput
-                    type="text"
-                    name="displayName"
-                    value={displayName}
-                    placeholder="Full name"
-                    onChange={this.handleChange}
-                />
-                <FormInput
-                    type="email"
-                    name="email"
-                    value={email}
-                    placeholder="Email"
-                    onChange={this.handleChange}
-                />
-                <FormInput
-                    type="password"
-                    name="password"
-                    value={password}
-                    placeholder="Password"
-                    onChange={this.handleChange}
-                />
-                <FormInput
-                    type="password"
-                    name="confirmPassword"
-                    value={confirmPassword}
-                    placeholder="Confirm Password"
-                    onChange={this.handleChange}
-                />
-
-                <Button type="Submit">
-                    Register
-                </Button>
-
-                </form>
+        <h2>Signup</h2>
+        <div className="formWrap">
+            <form onSubmit={handleFormSubmit}>
+                <div className="flex-row space-between my-2">
+                    <label htmlFor="firstName">First Name:</label>
+                    <input
+                        placeholder="First"
+                        name="firstName"
+                        type="firstName"
+                        id="firstName"
+                        onChange={handleChange}
+                    />
                 </div>
+                <div className="flex-row space-between my-2">
+                    <label htmlFor="lastName">Last Name:</label>
+                    <input
+                        placeholder="Last"
+                        name="lastName"
+                        type="lastName"
+                        id="lastName"
+                        onChange={handleChange}
+                    />
                 </div>
-            </div>
-        );
-    }
+                <div className="flex-row space-between my-2">
+                    <label htmlFor="email">Email:</label>
+                    <input
+                        placeholder="youremail@test.com"
+                        name="email"
+                        type="email"
+                        id="email"
+                        onChange={handleChange}
+                    />
+                </div>
+                <div className="flex-row space-between my-2">
+                    <label htmlFor="pwd">Password:</label>
+                    <input
+                        placeholder="******"
+                        name="password"
+                        type="password"
+                        id="pwd"
+                        onChange={handleChange}
+                    />
+                </div>
+                <button type="submit">
+                    Submit
+                </button>
+            </form>
+        </div>
+      </div>
+    </div>
+  );
 }
 
 export default Signup;
