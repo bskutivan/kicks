@@ -1,6 +1,7 @@
 import React from 'react';
 import Header from './components/Header';
 import Homepage from './pages/Homepage';
+import ProductsPg from './pages/ProductsPg';
 // import HomepageLayout from './layouts/HomepageLayout';
 import Registration from './pages/Registration';
 import Login from './pages/Login';
@@ -29,15 +30,16 @@ function App() {
     return (
         <ApolloProvider client={client}>
             <Router>
-                    <Provider store={store}>
-                        <Header />
-                        <Switch>
-                            <Route exact path="/" component={Homepage} />                                   
-                            <Route path="/registration" component={Registration} />
-                            <Route path="/login" component={Login}/>
-                        </Switch>
-                        <Footer />
-                    </Provider>
+                <Provider store={store}>
+                    <Header />
+                    <Switch>
+                        <Route exact path="/" component={Homepage} />                                   
+                        <Route path="/registration" component={Registration} />
+                        <Route path="/login" component={Login}/>
+                        <Route path="/products" component={ProductsPg} />
+                    </Switch>
+                    <Footer />
+                </Provider>
             </Router>
         </ApolloProvider>
     )
