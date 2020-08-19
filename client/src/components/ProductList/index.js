@@ -6,7 +6,7 @@ import { UPDATE_PRODUCTS } from '../../utils/actions';
 import { idbPromise } from "../../utils/helpers";
 import { useDispatch, useSelector } from 'react-redux';
 
-function ProductList({}) {
+function ProductList() {
     const state = useSelector((state) => {
         return state
     });
@@ -19,11 +19,10 @@ function ProductList({}) {
 
     const products = data?.products || [];
 
+
     useEffect(() => {
         // if there is data to be stored
         if (data) {
-            // store it in global state obj
-
             dispatch({
                 type: UPDATE_PRODUCTS,
                 products: data.products
@@ -51,7 +50,7 @@ function ProductList({}) {
             return state.products;
         }
 
-        return products.filter(product => product.category._id == currentCategory);
+        return products.filter(product => product.category._id === currentCategory);
     }
 
     return (

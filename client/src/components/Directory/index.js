@@ -8,6 +8,7 @@ import { UPDATE_CATEGORIES, UPDATE_CURRENT_CATEGORY } from "../../utils/actions"
 import { idbPromise } from '../../utils/helpers';
 import { useDispatch, useSelector } from 'react-redux';
 import './styles.css';
+import { Redirect } from 'react-router-dom';
 
 function Directory() {
 
@@ -19,7 +20,7 @@ function Directory() {
 
     const { categories } = state;
 
-    const arr = [ Casual, Dress, Performance ]
+    const arr = [ Performance, Casual, Dress ]
 
     const { loading, data: categoryData } = useQuery(QUERY_CATEGORIES);
 
@@ -43,7 +44,7 @@ function Directory() {
             });
             });
         }
-    }, [categoryData, dispatch]);
+    }, [categoryData, dispatch, loading]);
     
     const handleClick = id => {
         dispatch({
@@ -66,11 +67,11 @@ function Directory() {
                         backgroundImage: `url(${arr[index]})`
                     }}
                     >
-                        <a>
+                        <a href="http://localhost:3000/products">
                             Shop {item.name} Shoes
                         </a>
                     </div>
-                ))};
+                ))}
             </div>
         </div>
     );

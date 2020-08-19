@@ -40,7 +40,7 @@ db.once('open', async () => {
       category: [categories[0]._id],
       description:
         'Donec volutpat erat erat, sit amet gravida justo sodales in. Phasellus tempus euismod urna. Proin ultrices nisi ut ipsum congue, vitae porttitor libero suscipit. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Aliquam lacinia a nisi non congue.',
-      image: 'toilet-paper.jpg',
+      image: 'addidasM3.jpg',
       price: 97.99,
       quantity: 20
     },
@@ -49,7 +49,7 @@ db.once('open', async () => {
       category: [categories[0]._id],
       description:
         'Praesent placerat, odio vel euismod venenatis, lectus arcu laoreet felis, et fringilla sapien turpis vestibulum nisl.',
-      image: 'soap.jpg',
+      image: 'addidasM4.jpg',
       price: 93.99,
       quantity: 50
     },
