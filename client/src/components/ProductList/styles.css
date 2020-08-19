@@ -10,8 +10,12 @@
     background-color: rgba(14, 13, 13, 0.555);
     margin: 3rem;
     border-radius: 1rem;
+    color: rgb(186, 245, 211);
 }
 
+.card p {
+    color: rgb(186, 245, 211);
+}
 .card img {
     width: 80%;
     height: 55%;
@@ -23,3 +27,21 @@ h2 {
     color: rgb(240, 68, 68);
     margin: 2rem 0 0 3rem;
 }
+
+button {
+    font-size: 1rem;
+    text-decoration: none;
+    padding: 0.25rem 1rem;
+    border-radius: .5rem;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    margin: 0 1px;
+    background-color: rgb(236, 97, 97);
+}
+
+@media screen and (max-width: 768px) {
+    .card {
+      width: 100%;
+    }
+  }
