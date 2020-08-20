@@ -1,5 +1,8 @@
 .footer {
   background-color: black;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
 }
 
 .footer .wrap {
@@ -12,6 +15,10 @@
 .footer .wrap span {
   font-family: 'Alata', sans-serif;
   font-size: 20pt;
+}
+
+.footer .wrap img {
+  size: 5rem;
 }
 
 @media screen and (max-width: 376px) {
