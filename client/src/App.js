@@ -14,6 +14,7 @@ import ApolloClient from 'apollo-boost';
 import { Provider } from 'react-redux';
 import store from './redux/store';
 import OrderHistory from './pages/OrderHistory';
+import Success from './pages/Success';
 
 const client = new ApolloClient({
     request: (operation) => {
@@ -39,6 +40,7 @@ function App() {
                         <Route path="/login" component={Login}/>
                         <Route path="/products" component={ProductsPg} />
                         <Route path="/orderHistory" component={OrderHistory} />
+                        <Route exact path="/success" component={Success} />
                         <Route path="/products/:id" component={Detail} />
                     </Switch>
                     <Footer />
