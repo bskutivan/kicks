@@ -5,7 +5,7 @@ const Footer = props => {
     return (
         <footer className="footer">
             <div className="wrap">
-            Kicks 
+                <span>@2020 Kicks 👠</span> 
             </div>
         </footer>
     );

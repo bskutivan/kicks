@@ -34,10 +34,6 @@ function Signup(props) {
   return (
     <div className="signup">
         <div className="wrap">
-            <Link to="/login">
-                ← Go to Login
-            </Link>
-
         <h2>Signup</h2>
         <div className="formWrap">
             <form onSubmit={handleFormSubmit}>
@@ -86,6 +82,11 @@ function Signup(props) {
                 </button>
             </form>
         </div>
+      </div>
+      <div className="flex">
+        <Link to="/login">
+          ← Go to Login
+        </Link>
       </div>
     </div>
   );

@@ -10,14 +10,19 @@
     padding: .5rem;
     box-shadow: 0 0 1rem rgba(41, 40, 40, 0.5);
     border-bottom-left-radius: .5rem;
+    font-size: 17pt;
 }
 
 .cart h2 {
-    font-size: 1.5rem;
+    font-size: 2.5rem;
     border-bottom: 1px solid rgb(100, 99, 99);
     color: rgb(129, 125, 125);
     padding-bottom: .5rem;
     margin: 1rem 0;
+}
+
+.cart h3 {
+    font-size: 2rem;
 }
 
 .cart .close {
@@ -26,6 +31,7 @@
     right: .5rem;
     cursor: pointer;
     color: var(--tertiary);
+    font-size: 2rem;
 }
 
 .cart-closed {
@@ -39,4 +45,15 @@
     padding: .25rem;
     width: 50px;
     height: 50px;
+}
+
+.cart img {
+    width: 70px;
+    margin-right: 1rem;
+}
+  
+.cart input {
+    width: 50px;
+    padding: 0;
+    margin: 0 .5rem 1rem 0;
 }

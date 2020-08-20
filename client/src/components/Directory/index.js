@@ -62,6 +62,7 @@ function Directory() {
                     key={item._id}
                     onClick={() => {
                         handleClick(item._id);
+                        console.log(state.currentCategory)
                     }}
                     style={{
                         backgroundImage: `url(${arr[index]})`

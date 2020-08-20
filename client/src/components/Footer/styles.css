@@ -1,6 +1,23 @@
+.footer {
+  background-color: black;
+}
+
 .footer .wrap {
   max-width: 1450px;
   padding: 20 10px;
   margin: 0 auto;
+  color: rgba(122, 122, 122, 0.616);
+}
+
+.footer .wrap span {
+  font-family: 'Alata', sans-serif;
+  font-size: 20pt;
+}
+
+@media screen and (max-width: 376px) {
+  .footer .wrap span {
+    font-size: 15pt;
+    margin-left: 1.5rem;
+  }
 }
 /*# sourceMappingURL=styles.css.map */

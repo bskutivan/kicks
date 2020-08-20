@@ -7,12 +7,13 @@ import Registration from './pages/Registration';
 import Login from './pages/Login';
 // import MainLayout from './layouts/MainLayout';
 import Footer from './components/Footer';
-
+import Detail from './pages/Detail';
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import { ApolloProvider } from '@apollo/react-hooks';
 import ApolloClient from 'apollo-boost';
 import { Provider } from 'react-redux';
 import store from './redux/store';
+import OrderHistory from './pages/OrderHistory';
 
 const client = new ApolloClient({
     request: (operation) => {
@@ -37,6 +38,8 @@ function App() {
                         <Route path="/signup" component={Registration} />
                         <Route path="/login" component={Login}/>
                         <Route path="/products" component={ProductsPg} />
+                        <Route path="/orderHistory" component={OrderHistory} />
+                        <Route path="/products/:id" component={Detail} />
                     </Switch>
                     <Footer />
                 </Provider>

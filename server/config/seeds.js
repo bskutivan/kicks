@@ -246,7 +246,7 @@ db.once('open', async () => {
         category: [categories[1]._id],
         description:
           'Morbi consectetur viverra urna, eu fringilla turpis faucibus sit amet. Suspendisse potenti. Donec at dui ac sapien eleifend hendrerit vel sit amet lectus.',
-        image: 'chucksW1.jpg',
+        image: 'chucksW2.jpg',
         price: 100.99,
         quantity: 600
     },
