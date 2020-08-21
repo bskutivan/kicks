@@ -8,6 +8,7 @@ import { UPDATE_CATEGORIES, UPDATE_CURRENT_CATEGORY } from "../../utils/actions"
 import { idbPromise } from '../../utils/helpers';
 import { useDispatch, useSelector } from 'react-redux';
 import './styles.css';
+import { Link } from 'react-router-dom';
 import { Redirect } from 'react-router-dom';
 
 function Directory() {
@@ -68,9 +69,9 @@ function Directory() {
                         backgroundImage: `url(${arr[index]})`
                     }}
                     >
-                        <a href="http://localhost:3000/products">
+                        <Link to="/products">
                             Shop {item.name} Shoes
-                        </a>
+                        </Link>
                     </div>
                 ))}
             </div>
