@@ -1,6 +1,7 @@
 .directory {
     height: 100%;
     display: flex;
+    margin-bottom: 11rem;
 
     .wrap{
         display: flex;
@@ -25,6 +26,10 @@
             text-shadow: 2px 2px rgba(0, 0, 0, 0.582);
             background: none;
             color: rgb(235, 74, 74);
+        }
+
+        .item :hover {
+            opacity: 25%;
         }
     }
     }

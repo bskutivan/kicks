@@ -10,8 +10,12 @@ const Footer = props => {
                 <span>@2020 Kicks 👠</span> 
             </div>
             <div className="wrap">
-                <img alt="instagram" className="footer-img" src={Insta}  />
-                <img alt="twitter" className="footer-img" src={Twitter} />
+                <a href="instagram">
+                    <img alt="instagram" className="footer-img" src={Insta}  />
+                </a>
+                <a href="twitter">
+                    <img alt="twitter" className="footer-img" src={Twitter} />
+                </a>
             </div>
         </footer>
     );

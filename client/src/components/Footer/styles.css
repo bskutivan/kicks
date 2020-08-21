@@ -1,4 +1,8 @@
 .footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
   background-color: black;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -19,6 +23,10 @@
 
 .footer .wrap img {
   size: 5rem;
+}
+
+.footer-img a :hover {
+  opacity: 0%;
 }
 
 @media screen and (max-width: 376px) {

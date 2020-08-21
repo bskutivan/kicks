@@ -57,3 +57,14 @@
     padding: 0;
     margin: 0 .5rem 1rem 0;
 }
+
+@media screen and (max-width: 376px) {
+    .cart h2 {
+        margin-top: 22px;
+        font-size: 15pt;
+    }
+
+    .cart {
+        font-size: 10pt;
+    }
+}

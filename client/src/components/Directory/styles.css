@@ -3,6 +3,7 @@
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  margin-bottom: 11rem;
 }
 
 .directory .wrap {
@@ -40,6 +41,10 @@
   text-shadow: 2px 2px rgba(0, 0, 0, 0.582);
   background: none;
   color: #eb4a4a;
+}
+
+.directory .wrap .item .item :hover {
+  opacity: 25%;
 }
 
 @media screen and (max-width: 376px) {
