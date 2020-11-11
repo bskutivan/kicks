@@ -1,5 +1,5 @@
 # Kicks
-  ![Github licence]MIT
+ ![Github licence](http://img.shields.io/badge/license-MIT-blue.svg)
   ## Description
   This app was built for the purpose of furthering our understanding of a full-stack MERN app that uses Redux to manage state.
   ## Table of Contents
